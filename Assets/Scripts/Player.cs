@@ -9,8 +9,10 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxCollider;
     //vector to track change in movement
     private Vector3 moveDelta;
+    //to detect collisions with blocking objects
+    private RaycastHit2D hit;
 
-    private void start()
+    private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
     }
@@ -35,8 +37,18 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-
-        //now we apply the change in movement to the player. Use time.deltatie so movement is independent from framerate.
-        transform.Translate(moveDelta * Time.deltaTime);
+        //Check if player can move in y direction by casting a box there and detecting collisions with the Actor and Blocking layers
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+        //if player doesn't hit a blocking object in y direction, move in y direction. Use time.deltatime so movement is independent from framerate.
+        if (hit.collider == null)
+        {
+            transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+        }
+        //do the same thing for x axis
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+        if (hit.collider == null)
+        {
+            transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+        }
     }
 }
