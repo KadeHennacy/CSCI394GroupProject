@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
+  - Projectiles
   - Blocking
+  - Player
   - Actor
-  - 
-  - 
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Actor
     uniqueID: 1526818871
+    locked: 0
+  - name: Projectile
+    uniqueID: 1962659635
     locked: 0
