@@ -44,6 +44,9 @@ TagManager:
   - name: Blocking
     uniqueID: 299966093
     locked: 0
+  - name: floor
+    uniqueID: 851075029
+    locked: 0
   - name: Actor
     uniqueID: 1526818871
     locked: 0
