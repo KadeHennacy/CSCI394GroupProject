@@ -11,10 +11,21 @@ public class Player : MonoBehaviour
     private Vector3 moveDelta;
     //to detect collisions with blocking objects
     private RaycastHit2D hit;
+    //to take damage and heal
+    public GameObject healthBar;
+    private Health healthScript;
 
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
+        healthScript = GetComponent<Health>();
+    }
+    private void OnCollisionEnter2D(Collision2D col){
+        //look at col to see what hit player
+        if(col.gameObject.name.Contains("enemy")){
+            Debug.Log("badChungus hits player");
+            healthScript.TakeDamage(20);
+        }
     }
     //we need fixed update because we're using physics with manual collision detection, so it needs to follow the physics
     //theres a rare chance it could skip some inputs, but we don't have a choice if we're using manual collision detection

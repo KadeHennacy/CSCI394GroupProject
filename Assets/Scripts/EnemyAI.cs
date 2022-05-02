@@ -8,12 +8,23 @@ public class EnemyAI : MonoBehaviour
     public float moveSpeed = 0.2f;
     private Rigidbody2D rb;
     public Vector2 movement;
-    // Start is called before the first frame update
+    public GameObject healthBar;
+    private Health healthScript;
+    private BoxCollider2D boxCollider;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        healthScript = GetComponent<Health>();
     }
-
+    private void OnCollisionEnter2D(Collision2D col){
+        //look at col to see what hit enemy
+        if(col.gameObject.name == "projectile(Clone)"){
+            Debug.Log("projectile hits enemy");
+            healthScript.TakeDamage(20);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
