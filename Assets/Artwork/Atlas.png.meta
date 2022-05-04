@@ -155,6 +155,9 @@ TextureImporter:
   - first:
       213: -6026731920720571777
     second: torch_8
+  - first:
+      213: -2386295036631077607
+    second: level1Enemy
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1322,6 +1325,27 @@ TextureImporter:
       bones: []
       spriteID: f7251f4cf3fbc5ca0800000000000000
       internalID: -6026731920720571777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1Enemy
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 48
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91da35cae4d22eed0800000000000000
+      internalID: -2386295036631077607
       vertices: []
       indices: 
       edges: []
