@@ -15,11 +15,11 @@ public class Health : MonoBehaviour
     }
     void FixedUpdate()
     {
-     if(healthAmount <= 0){
-         if(gameObject.name.Contains("Player")){
-             Destroy(gameObject);
-             Debug.Log("Game Over");
-             SceneManager.LoadScene("GameOver");
+        if(healthAmount <= 0){
+            if(gameObject.name.Contains("Player")){
+                Destroy(gameObject);
+                Debug.Log("Game Over");
+                SceneManager.LoadScene("GameOver");
          }
         //  check whether the script is on the player or an enemy. If it's on player, load a gameover level
         //e.g. Application.LoadLevel(Application.loadedLevel);

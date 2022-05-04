@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public Transform player;
-    public float moveSpeed = 0.2f;
+    public float moveSpeed = 0.18f;
     private Rigidbody2D rb;
     public Vector2 movement;
     public GameObject healthBar;
     private Health healthScript;
     private BoxCollider2D boxCollider;
+    public GameObject sprite;
 
     void Start()
     {
@@ -33,20 +34,29 @@ public class EnemyAI : MonoBehaviour
         if(angle > 90)
         {
             transform.localScale = new Vector3(-0.1f, 0.1f, 1);
+            healthBar.transform.localScale = new Vector3(-1,1,1);
         }
         else if (angle < 90)
         {
             transform.localScale = new Vector3(0.1f, 0.1f, 1);
+            healthBar.transform.localScale = new Vector3(1,1,1);
         }
-        rb.rotation = Mathf.Clamp(angle, -90, 90);
-        //rb.rotation = (angle);
+        // rb.rotation = Mathf.Clamp(angle, -90, 90);
+        rb.rotation = (angle);
         direction.Normalize();
         movement = direction;
     }
     void FixedUpdate(){
-        move(movement);
+        rb.MovePosition((Vector2)transform.position + (movement * moveSpeed * Time.deltaTime));
+        //ensure the spirte and healthbar don't rotate
+        healthBar.transform.rotation = Quaternion.Euler(0, 0, 0);
+        sprite.transform.rotation = Quaternion.Euler(0, 0, 0);
+        healthBar.transform.position = transform.position + new Vector3(0, -0.25f, 0);
+        sprite.transform.localPosition = new Vector3(0, 0, 0);
+
     }
     void move(Vector2 direction){
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        
+        // sprite.transform.rotation = (-angle);
     }
 }

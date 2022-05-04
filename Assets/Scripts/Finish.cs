@@ -7,18 +7,9 @@ using UnityEngine.SceneManagement;
 // based on https://www.youtube.com/watch?v=dO5BzWYqEdY
 public class Finish : MonoBehaviour
 {
-    // this won't work until sound effects are added
-    // must add audiosource component to finish object before this will work, otherwise it needs to be serialized
-    private AudioSource finishSound;
-
-    private void Start()
-    {
-        finishSound = GetComponent<AudioSource>();
-    }
-    //player must have ridgidbody2d
     private void OnTriggerEnter2D(Collider2D col){
+        Debug.Log(col.gameObject.name);
         if (col.gameObject.name.Contains("Player")){
-            // finishSound.Play();
             CompleteLevel();
         }
     }

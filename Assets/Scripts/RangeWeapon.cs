@@ -11,10 +11,12 @@ public class RangeWeapon : MonoBehaviour
     public float fireRate = 60f;
     public float damage = 1f;
     private float lastFired;
+    private AudioSource shootingSound;
 
     // Update is called once per frame
     void Start()
     {
+        shootingSound = GetComponent<AudioSource>();
         lastFired = 60 / fireRate;
     }
     void FixedUpdate()
@@ -36,5 +38,6 @@ public class RangeWeapon : MonoBehaviour
        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
        rb.AddForce(firePoint.up * projectileForce, ForceMode2D.Impulse);
+       shootingSound.Play();
     }
 }
