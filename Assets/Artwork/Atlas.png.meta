@@ -155,6 +155,15 @@ TextureImporter:
   - first:
       213: -6026731920720571777
     second: torch_8
+  - first:
+      213: -2386295036631077607
+    second: enemy2
+  - first:
+      213: -6613792370922084840
+    second: Atlas_52
+  - first:
+      213: -1988828135353101337
+    second: enemy01
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1322,6 +1331,69 @@ TextureImporter:
       bones: []
       spriteID: f7251f4cf3fbc5ca0800000000000000
       internalID: -6026731920720571777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 47
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91da35cae4d22eed0800000000000000
+      internalID: -2386295036631077607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 80
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816200941e61734a0800000000000000
+      internalID: -6613792370922084840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy01
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 96
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3d9f029534664e0800000000000000
+      internalID: -1988828135353101337
       vertices: []
       indices: 
       edges: []

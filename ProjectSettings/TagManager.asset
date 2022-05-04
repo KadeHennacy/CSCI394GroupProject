@@ -41,17 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: walls
-    uniqueID: 2279127479
-    locked: 0
-  - name: floor
-    uniqueID: 229999957
+  - name: Blocking
+    uniqueID: 299966093
     locked: 0
   - name: Actor
     uniqueID: 1526818871
     locked: 0
-  - name: Blocking
-    uniqueID: 299966093
+  - name: Player
+    uniqueID: 149462061
     locked: 0
   - name: Projectile
     uniqueID: 1962659635
