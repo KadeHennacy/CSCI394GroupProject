@@ -20,6 +20,7 @@ public class EnemyAI : MonoBehaviour
         healthScript = GetComponent<Health>();
     }
     private void OnCollisionEnter2D(Collision2D col){
+        Debug.Log(col.gameObject.name);
         //look at col to see what hit enemy
         if(col.gameObject.name == "projectile(Clone)"){
             Debug.Log("projectile hits enemy");
