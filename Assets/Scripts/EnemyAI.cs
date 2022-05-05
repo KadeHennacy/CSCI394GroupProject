@@ -31,16 +31,16 @@ public class EnemyAI : MonoBehaviour
     {
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        if(angle > 90)
-        {
-            transform.localScale = new Vector3(-0.1f, 0.1f, 1);
-            healthBar.transform.localScale = new Vector3(-1,1,1);
-        }
-        else if (angle < 90)
-        {
-            transform.localScale = new Vector3(0.1f, 0.1f, 1);
-            healthBar.transform.localScale = new Vector3(1,1,1);
-        }
+        // if(angle > 90)
+        // {
+        //     transform.localScale = Vector3.Scale(new Vector3(-1, 1, 1), transform.localScale);
+        //     healthBar.transform.localScale = new Vector3(-1,1,1);
+        // }
+        // else if (angle < 90)
+        // {
+        //     transform.localScale = new Vector3(0.2f, 0.2f, 1);
+        //     healthBar.transform.localScale = new Vector3(1,1,1);
+        // }
         // rb.rotation = Mathf.Clamp(angle, -90, 90);
         rb.rotation = (angle);
         direction.Normalize();
