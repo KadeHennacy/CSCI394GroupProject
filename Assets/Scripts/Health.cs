@@ -31,9 +31,9 @@ public class Health : MonoBehaviour
         }
      }
      //for testing
-     if(Input.GetKeyDown(KeyCode.E)){
-         TakeDamage(5);
-     }
+    //  if(Input.GetKeyDown(KeyCode.E)){
+    //      TakeDamage(5);
+    //  }
      if(Input.GetKeyDown(KeyCode.Q)){
          Healing(5);
      }
